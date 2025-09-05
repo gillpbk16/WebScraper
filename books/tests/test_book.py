@@ -3,8 +3,6 @@ from urllib.parse import urljoin
 from itemadapter import ItemAdapter
 from scrapy.http import HtmlResponse, Request
 from books.spiders.book import BookSpider
-from books.items import BooksItem
-
 
 class BookSpiderTest(unittest.TestCase):
 
@@ -191,11 +189,6 @@ class BookSpiderTest(unittest.TestCase):
         results = list(self.spider.parse(self.response))
         items, requests = self.split_results(results)
 
-        # There should be two book items and one pagination request
-        book_items = [item for item in results if isinstance(item, BooksItem)]
-        pagination_requests = [
-            item for item in results if isinstance(item, Request)
-        ]
 
         self.assertEqual(len(items), 2) 
         self.assertEqual(len(requests), 1)

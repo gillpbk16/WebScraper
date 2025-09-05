@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+books/**/__pycache__/
+
+# Scrapy
+.scrapy/
+*.log
+books/book_scraper.log
+
+# Data (ignore everything except a small sample file)
+data/*
+!data/sample.json
